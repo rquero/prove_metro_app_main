@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "name": "PADEL",
+      "description": "Nibh eros natoque lacus litora ornare egestas leo elementum sociosqu convallis diam parturient potenti cubilia euismod, fames eu dignissim tincidunt et volutpat eleifend accumsan class consequat tempor at justo viverra.",
+      "image": "images/PADEL--300x119.jpg",
+      "responsibleTrainer": 1,
+      "registeredPartners": [1,4,5,8,10,12],
+      "classDay": "lunes",
+      "classHour": "9:00"
+    },
+    {
+      "id": 2,
+      "name": "SPINNING",
+      "description": "Dignissim montes sed porttitor vehicula vulputate vivamus ultricies, blandit lacus sem consequat nostra lectus facilisi, faucibus litora nullam senectus suspendisse torquent. Accumsan cubilia imperdiet erat sociosqu egestas donec, augue suscipit curabitur etiam id maecenas morbi, volutpat molestie orci nisi purus.",
+      "image": "images/CYCLING-5-300x225.jpg",
+      "responsibleTrainer": 1,
+      "registeredPartners": [3,4,5,6,7,8,9],
+      "classDay": "lunes",
+      "classHour": "11:00"
+    },
+    {
+      "id": 3,
+      "name": "PADEL",
+      "description": "Nulla mus natoque facilisis egestas per cubilia, pulvinar feugiat nibh tellus ornare vestibulum, auctor fames orci praesent mi. Nascetur pellentesque congue interdum netus, viverra hac.",
+      "image": "images/IMAGEN_PADEL_PROVIS-300x192.jpg",
+      "responsibleTrainer": 2,
+      "registeredPartners": [9,10,12,14],
+      "classDay": "martes",
+      "classHour": "10:00"
+    },
+    {
+      "id": 4,
+      "name": "YOGA",
+      "description": "Sociis vestibulum dictum mollis nulla risus blandit, gravida taciti vivamus elementum. Aptent dictumst porta etiam suscipit inceptos luctus donec magna, vehicula at urna aliquet venenatis nibh parturient fringilla, congue montes et nascetur tristique lectus semper.",
+      "image": "images/SALA_ACTIVIDADES_02-300x225.jpg",
+      "responsibleTrainer": 1,
+      "registeredPartners": [5,7,8,11,12,13],
+      "classDay": "miercoles",
+      "classHour": "17:00"
+    },
+    {
+      "id": 5,
+      "name": "SPINNING",
+      "description": "Aliquet est nullam orci litora ad penatibus suspendisse proin rutrum nam, ridiculus sem lacinia cras volutpat dapibus nisl justo tortor tempus, ultrices sed vitae phasellus vestibulum lectus lacus magnis nisi.",
+      "image": "images/CARDIO-2-300x225.jpg",
+      "responsibleTrainer": 1,
+      "registeredPartners": [1,2,3,4,5,6],
+      "classDay": "miercoles",
+      "classHour": "17:00"
+    },
+    {
+      "id": 9,
+      "name": "YOGA",
+      "description": "Hac nulla aliquam conubia class massa ullamcorper senectus ligula scelerisque id, aenean pharetra dictumst molestie odio fermentum neque torquent sociosqu rhoncus, himenaeos varius nostra mauris mattis semper ridiculus donec at. Euismod quisque lobortis habitasse risus, pulvinar elementum.",
+      "image": "images/SALA_ACTIVIDADES_02-300x225.jpg",
+      "responsibleTrainer": 1,
+      "registeredPartners": [2,4,5,7,10,14],
+      "classDay": "jueves",
+      "classHour": "9:00"
+    }
+  ]
