@@ -1,8 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:prove_metro_app_main/core/constants/color_constant.dart';
+import 'package:prove_metro_app_main/core/constants/image_constant.dart';
 
 import 'package:prove_metro_app_main/core/constants/key_constant.dart';
+import 'package:prove_metro_app_main/core/constants/text_constant.dart';
 import 'package:prove_metro_app_main/core/themes/app_decoration.dart';
 import 'package:prove_metro_app_main/core/themes/app_styles.dart';
 import 'package:prove_metro_app_main/features/activities/cubit/activities_cubit.dart';
@@ -24,7 +27,7 @@ class ActivitiesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.only(left: 16, right: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -51,17 +54,16 @@ class ActivitiesList extends StatelessWidget {
                   onSubscriptionActivity: 
                     () => context.read<ActivitiesCubit>().subscriptionActivity(activitySelected),
                   onShowDetail: () {
-                    // final hideButton = context.read<ActivitiesCubit>().canInscription(activity);
-                    // final
                     showModalBottomSheet(
-                      backgroundColor: Colors.transparent,
+                      backgroundColor: ColorConstant.transparent,
                       context: context,
                       builder: (BuildContext context) {
                         return ActivityDetail(
                           activity: activity,
                           hideButton: !activitySelected.hasMatches,
                           titleButton: !activitySelected.selected
-                              ? 'Inscribirse' : 'Cancelar',
+                              ? TextConstant.inscriptionActivityButton
+                              : TextConstant.cancelActivityButton,
                           onTap: (Activity activity) {
                             context.read<ActivitiesCubit>().subscriptionActivity(activitySelected);
                             Navigator.pop(context);
@@ -75,7 +77,6 @@ class ActivitiesList extends StatelessWidget {
               itemCount: activitiesList.length,
             ),
           ),
-      
         ],
       ),
     );
@@ -140,8 +141,11 @@ class _ActivitiesListItem extends StatelessWidget {
 
             if (!showButton)
               _ActivitiesListBottomButton(
+                key: Key('${KeyConstant.activitiesListButtonDetailKey}_${activity.id}'),
                 onTap: onSubscriptionActivity,
-                label: !selected ? 'Inscribirse' : 'Cancelar',
+                label: !selected
+                  ? TextConstant.inscriptionActivityButton
+                  : TextConstant.cancelActivityButton,
               )
             
           ],
@@ -153,7 +157,9 @@ class _ActivitiesListItem extends StatelessWidget {
 
 class _ActivitiesListBottomButton extends StatelessWidget {
   const _ActivitiesListBottomButton({
-    super.key, this.onTap, required this.label,
+    super.key,
+    this.onTap,
+    required this.label,
   });
 
   final VoidCallback? onTap;
@@ -171,17 +177,16 @@ class _ActivitiesListBottomButton extends StatelessWidget {
           width: mediaQuery.size.width * 0.9,
           height: 30,
           decoration: AppDecoration.roundedBorderRadius(
-            color: Colors.black.withOpacity(0.4),
+            color: ColorConstant.black00.withOpacity(0.4),
             customShape: ShapeBorderRadius.BorderRadiusOnlyTop,
             radius: 34
           ),
           child: Align(
             alignment: Alignment.center,
-            child: Text(label, style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w600
-            )),
+            child: Text(
+              label,
+              style: AppStyle.txtPoppinsSemiBold16White
+            ),
           ),
         ),
       ),
@@ -205,9 +210,9 @@ class _ActivitiesListBackground extends StatelessWidget {
       decoration: AppDecoration.roundedBorderRadius(
         customShape: ShapeBorderRadius.BorderRadiusAll,
         radius: 20,
-        image: 'resources/$image',
+        image: '${ImageConstant.rootPath}/$image',
         colorFilter: ColorFilter.mode(
-          Colors.black.withOpacity(0.6),
+          ColorConstant.black00.withOpacity(0.6),
           BlendMode.darken
         )
       ),

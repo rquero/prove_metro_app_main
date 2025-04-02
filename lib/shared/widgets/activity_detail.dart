@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:prove_metro_app_main/core/constants/image_constant.dart';
 import 'package:prove_metro_app_main/core/themes/app_decoration.dart';
 import 'package:prove_metro_app_main/core/themes/app_styles.dart';
 import 'package:prove_metro_app_main/shared/models/activity.dart';
@@ -23,10 +24,10 @@ class ActivityDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 280,
+      height: 300,
       padding: const EdgeInsets.all(16),
       decoration: AppDecoration.roundedBorderRadius(
-        color: Color.fromARGB(255, 26, 27, 29),
+        color: Theme.of(context).colorScheme.surface,
         customShape: ShapeBorderRadius.BorderRadiusOnlyTop,
         radius: 34,
       ),
@@ -37,7 +38,7 @@ class ActivityDetail extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _ActivityDetailImage(
-                  image: 'resources/${activity.image}',
+                  image: '${ImageConstant.rootPath}/${activity.image}',
                 ),
             
                 const SizedBox(width: 8),
@@ -67,6 +68,9 @@ class ActivityDetail extends StatelessWidget {
                 ),
               ],
             ),
+
+            const SizedBox(height: 10),
+
             if (hideButton) _ButtonReservation(
               title: titleButton,
               onTap: onTap != null ? () => onTap!(activity) : null
@@ -99,6 +103,9 @@ class _ButtonReservation extends StatelessWidget {
             minHeight: 34
           ),
           child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Theme.of(context).colorScheme.onSurfaceVariant
+            ),
             onPressed: onTap,
             child: Text(title, style: AppStyle.txtPoppinsRegular14White)
           )),

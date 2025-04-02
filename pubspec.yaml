@@ -30,6 +30,7 @@ environment:
 dependencies:
   bloc: ^9.0.0
   bloc_test: ^10.0.0
+  cached_network_image: ^3.4.1
   cupertino_icons: ^1.0.8
   equatable: ^2.0.7
   flutter:
@@ -67,18 +68,12 @@ flutter_native_splash:
     image: "resources/images/output-onlinepngtools.png"
     android_gravity: center
     ios_content_mode: center
-
-
   # min_sdk_android: 21
   # adaptive_icon_background: "#000000"
   # adaptive_icon_foreground: "resources/images/HD-wallpaper-black-color-dark-plain-solid.jpg"
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
-
-
-
 flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -103,6 +98,5 @@ flutter:
     - family: Poppins
       fonts:
         - asset: resources/fonts/Poppins-Regular.ttf
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

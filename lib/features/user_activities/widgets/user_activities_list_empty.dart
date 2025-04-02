@@ -16,10 +16,13 @@ class UserActivitiesListEmpty extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              textAlign: TextAlign.center,
-              TextConstant.userActivitiesListEmpty,
-              style: AppStyle.txtPoppinsSemiBold18White
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                textAlign: TextAlign.center,
+                TextConstant.userActivitiesListEmpty,
+                style: AppStyle.txtPoppinsSemiBold18White
+              ),
             ),
 
             const SizedBox(height: 10),
@@ -29,9 +32,10 @@ class UserActivitiesListEmpty extends StatelessWidget {
               width: MediaQuery.sizeOf(context).width,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: ColorConstant.black3D
+                  backgroundColor: Theme.of(context).colorScheme.onSurfaceVariant
                 ),
-                onPressed: () => context.read<HomeCubit>().setTab(HomeTab.activities),
+                onPressed: () => context.read<HomeCubit>()
+                  .setTab(HomeTab.activities),
                 child: Text(
                   TextConstant.userActivitiesEmptyButton,
                   style: AppStyle.txtPoppinsRegular12White,

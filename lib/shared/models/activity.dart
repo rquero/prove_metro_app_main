@@ -44,7 +44,7 @@ class Activity {
         "registeredPartners": List<dynamic>.from(registeredPartners.map((x) => x)),
         "classDay"          : classDay,
         "classHour"         : classHour,
-        "trainer"           : trainer
+        "trainer"           : trainer != null ? trainer!.toJson() : trainer
     };
 
     @override

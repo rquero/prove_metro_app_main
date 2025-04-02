@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:prove_metro_app_main/core/constants/color_constant.dart';
 import 'package:prove_metro_app_main/core/constants/font_constant.dart';
 import 'package:prove_metro_app_main/core/themes/app_styles.dart';
@@ -8,11 +9,11 @@ class AppTheme {
   static ColorScheme colorScheme = ColorScheme.fromSeed(
     brightness: Brightness.dark,
     seedColor: const Color(0xFF13B9FF),
-    primary: Color.fromARGB(255, 26, 27, 29),
+    primary: ColorConstant.black1D,
     secondary: ColorConstant.whiteFF,
-    surface: Color.fromARGB(255, 26, 27, 29),
-    surfaceContainer: Color.fromARGB(255, 26, 27, 29),
-
+    surface: ColorConstant.black1D,
+    onSurfaceVariant: ColorConstant.black3D,
+    surfaceContainer: ColorConstant.black1D,
   );
 
   static ThemeData get dark {
@@ -28,10 +29,11 @@ class AppTheme {
       scaffoldBackgroundColor: colorScheme.surface,
 
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: ColorConstant.black3D,
-        selectedItemColor: colorScheme.primary,
-        selectedLabelStyle: AppStyle.txtPoppinsMedium14White.copyWith(color: Colors.white)
-        
+        backgroundColor: colorScheme.onSurfaceVariant,
+        selectedItemColor: colorScheme.secondary,
+        unselectedItemColor: colorScheme.primary,
+        selectedLabelStyle: AppStyle.txtPoppinsRegular12White,
+        unselectedLabelStyle: AppStyle.txtPoppinsRegular12White,
       ),
 
       snackBarTheme: SnackBarThemeData(

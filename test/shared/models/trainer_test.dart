@@ -12,18 +12,16 @@ final Map<String, dynamic> trainerJson = {
 
 void main() {
   group('Trainer', () {
-    group('fromJson', () {
-      test('returns correct Trainer object', () {
-        expect(
-          Trainer.fromJson(trainerJson),
-          isA<Trainer>()
-              .having((w) => w.id, 'id', trainerJson['id'])
-              .having((w) => w.name, 'name', trainerJson['name'])
-              .having((w) => w.lastNames, 'lastNames', trainerJson['lastNames'])
-              .having((w) => w.dni, 'dni', trainerJson['dni'])
-              .having((w) => w.cv, 'cv', trainerJson['cv'])
-              .having((w) => w.activities, 'activities', trainerJson['activities']));
-      });
+    test('returns correct Trainer object', () {
+      expect(
+        Trainer.fromJson(trainerJson),
+        isA<Trainer>()
+            .having((w) => w.id, 'id', trainerJson['id'])
+            .having((w) => w.name, 'name', trainerJson['name'])
+            .having((w) => w.lastNames, 'lastNames', trainerJson['lastNames'])
+            .having((w) => w.dni, 'dni', trainerJson['dni'])
+            .having((w) => w.cv, 'cv', trainerJson['cv'])
+            .having((w) => w.activities, 'activities', trainerJson['activities']));
     });
   });
 }

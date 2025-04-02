@@ -61,22 +61,4 @@ class UserActivitiesCubit extends Cubit<UserActivitiesState> {
     emit(state.copyWith(unsubscriptionStatus: UnsubscriptionStatus.initial));
 
   }
-
-  // void deleteActivity(Activity activity) {
-  //   print('delete activity');
-  //   try {
-  //     _activityUserService.removeActivity(activity);
-
-  //     final activities = _activityUserService.getActivitiesList();
-
-  //     emit(
-  //       state.copyWith(
-  //         status: ActivitiesListUserStatus.success,
-  //         activitiesList: [...activities]
-  //     ));
-  //   } catch (err) {
-  //     print('Error delete activity');
-  //   }
-  // }
-
 }

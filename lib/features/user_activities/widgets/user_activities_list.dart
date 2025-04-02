@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:prove_metro_app_main/core/constants/color_constant.dart';
+import 'package:prove_metro_app_main/core/constants/image_constant.dart';
 import 'package:prove_metro_app_main/core/constants/key_constant.dart';
+import 'package:prove_metro_app_main/core/constants/text_constant.dart';
 import 'package:prove_metro_app_main/core/themes/app_styles.dart';
 import 'package:prove_metro_app_main/features/user_activities/cubit/user_activities_cubit.dart';
 import 'package:prove_metro_app_main/shared/models/activity.dart';
@@ -23,11 +25,14 @@ class UserActivitiesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title,
-            style: AppStyle.txtPoppinsSemiBold18White,
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Text(
+              title,
+              style: AppStyle.txtPoppinsSemiBold18White,
+            ),
           ),
       
           const SizedBox(
@@ -53,7 +58,7 @@ class UserActivitiesList extends StatelessWidget {
                       builder: (BuildContext context) {
                         return ActivityDetail(
                           activity: activity,
-                          titleButton: 'Cancelar',
+                          titleButton: TextConstant.cancelActivityButton,
                           onTap: (Activity activity) {
                             context.read<UserActivitiesCubit>().deleteActivity(activity);
                             Navigator.pop(context);
@@ -144,7 +149,7 @@ class _ActivityCard extends StatelessWidget {
     return BoxDecoration(
       color: ColorConstant.gray3D,
       image: DecorationImage(
-        image: AssetImage('resources/${activity.image}'),
+        image: AssetImage('${ImageConstant.rootPath}/${activity.image}'),
         fit: BoxFit.cover,
         colorFilter: ColorFilter.mode(
           Colors.black.withOpacity(0.8),
@@ -175,7 +180,10 @@ class _ActivityTrainer extends StatelessWidget {
             
             const SizedBox(width: 4),
 
-            Text('Trainer', style: AppStyle.txtPoppinsRegular12White),
+            Text(
+              TextConstant.titleTrainerActivity,
+              style: AppStyle.txtPoppinsRegular12White
+            ),
           ],
         ),
         
@@ -205,7 +213,10 @@ class _ActivityCardButton extends StatelessWidget {
           color: ColorConstant.gray3D.withOpacity(0.6),
           borderRadius: BorderRadius.only(topLeft: Radius.circular(20))
         ),
-        child: Center(child: Text('Cancelar', style: AppStyle.txtPoppinsMedium14White)),
+        child: Center(child: Text(
+          TextConstant.cancelActivityButton,
+          style: AppStyle.txtPoppinsMedium14White
+        )),
       ),
     );
   }

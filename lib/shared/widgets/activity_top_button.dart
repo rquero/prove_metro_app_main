@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prove_metro_app_main/core/constants/color_constant.dart';
 
 class ActivityTopButton extends StatelessWidget {
   const ActivityTopButton({
@@ -16,14 +17,14 @@ class ActivityTopButton extends StatelessWidget {
         width: 30,
         height: 30,
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.4),
+          color: ColorConstant.black00.withOpacity(0.4),
           borderRadius: BorderRadius.all(
             Radius.circular(20)
           )
         ),
         child: Icon(
           Icons.visibility_outlined,
-          color: Colors.white,
+          color: Theme.of(context).colorScheme.secondary,
           size: 14
         ),
       ),

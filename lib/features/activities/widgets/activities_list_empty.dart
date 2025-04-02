@@ -9,7 +9,7 @@ class ActivitiesListEmpty extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: Text(TextConstant.activitiesListEmpty)
-      );
+      child: Text(TextConstant.activitiesListEmpty)
+    );
   }
 }

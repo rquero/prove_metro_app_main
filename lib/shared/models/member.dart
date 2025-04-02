@@ -25,7 +25,7 @@ class Member {
         "dni"       : dni,
     };
 
-    String get fullName => '$name $lastNames';
+    String? get fullName => '$name $lastNames';
 
     Member copyWith({
       int? id,
@@ -39,6 +39,6 @@ class Member {
       dni: dni ?? this.dni
     );
 
-    @override
+  @override
   String toString() => 'id: $id, name: $name, lastNames: $lastNames, dni: $dni';
 }

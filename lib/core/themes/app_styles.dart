@@ -17,29 +17,36 @@ class AppStyle {
     fontWeight: FontWeight.w500,
   );
 
-  static TextStyle txtPoppinsRegular14White = const TextStyle(
-    color: Colors.white,
+  static TextStyle txtPoppinsRegular14White = TextStyle(
+    color: ColorConstant.whiteFF,
     fontSize: 14,
     fontFamily: AppFonts.appFontPoppins,
     fontWeight: FontWeight.w400,
   );
 
   static TextStyle txtPoppinsRegular12White = TextStyle(
-    color: Colors.white,
+    color: ColorConstant.whiteFF,
     fontSize: 12,
     fontFamily: AppFonts.appFontPoppins,
     fontWeight: FontWeight.w400,
   );
 
-  static TextStyle txtPoppinsSemiBold18White = const TextStyle(
-    color: Colors.white,
+  static TextStyle txtPoppinsRegular12Black = TextStyle(
+    color: ColorConstant.black3D,
+    fontSize: 12,
+    fontFamily: AppFonts.appFontPoppins,
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtPoppinsSemiBold18White = TextStyle(
+    color: ColorConstant.whiteFF,
     fontSize: 18,
     fontFamily: AppFonts.appFontPoppins,
     fontWeight: FontWeight.w600,
   );
 
-  static TextStyle txtPoppinsSemiBold24White = const TextStyle(
-    color: Colors.white,
+  static TextStyle txtPoppinsSemiBold24White = TextStyle(
+    color: ColorConstant.whiteFF,
     fontSize: 24,
     fontFamily: AppFonts.appFontPoppins,
     fontWeight: FontWeight.w600,

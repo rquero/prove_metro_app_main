@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:prove_metro_app_main/core/constants/color_constant.dart';
 import 'package:prove_metro_app_main/core/constants/text_constant.dart';
+import 'package:prove_metro_app_main/core/themes/app_decoration.dart';
 import 'package:prove_metro_app_main/core/themes/app_styles.dart';
 
 class ActivitySchedule extends StatelessWidget {
@@ -20,12 +20,13 @@ class ActivitySchedule extends StatelessWidget {
       children: [
         Container(
           width: 6,
-          height: 6, 
-          decoration: BoxDecoration(
-            color: ColorConstant.whiteFF,
-            borderRadius: BorderRadius.circular(20))
-          ),
-
+          height: 6,
+          decoration: AppDecoration.roundedBorderRadius(
+            radius: 20.0,
+            customShape: ShapeBorderRadius.BorderRadiusAll,
+            color: Theme.of(context).colorScheme.secondary
+          )),
+  
        const SizedBox(width: 4),
        
         Text(
@@ -37,44 +38,37 @@ class ActivitySchedule extends StatelessWidget {
     
         Icon(
           Icons.date_range,
-          color: ColorConstant.whiteFF, size: 14
+          color: Theme.of(context).colorScheme.secondary,
+          size: 14
         ),
         
         const SizedBox(width: 4),
     
         Text(
           day,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 12,
-            fontWeight: FontWeight.w400
-          )
+          style: AppStyle.txtPoppinsRegular12White
         ),
     
         const SizedBox(width: 4),
     
         Text(
           '-',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 12,
-            fontWeight: FontWeight.w400
-          )
+          style: AppStyle.txtPoppinsRegular12White
         ),
     
         const SizedBox(width: 4),
     
-        Icon(Icons.alarm_on_outlined, color: ColorConstant.whiteFF, size: 14),
+        Icon(
+          Icons.alarm_on_outlined,
+          color: Theme.of(context).colorScheme.secondary,
+          size: 14
+        ),
     
         const SizedBox(width: 4),
     
         Text(
           hour,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 12,
-            fontWeight: FontWeight.w400
-          )
+          style: AppStyle.txtPoppinsRegular12White
         )
       ]
     );
